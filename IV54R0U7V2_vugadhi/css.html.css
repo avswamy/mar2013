@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Dhurjati&family=Chathura&display=swap');
+
+h1 {
+    font-family: 'Dhurjati', sans-serif;
+}
+
+.heading {
+    color: white;
+    font-size: 50px;
+}
+
+.rasi {
+    height: 150px;
+    width: 150px;
+    border-radius: 50px;
+}
+
+h3 {
+    font-family: 'Dhurjati', cursive;
+}
+
+p {
+    font-family: 'Chathura', sans-serif;
+}
+
+.card {
+
+    background: rgb(241, 164, 8);
+    background: linear-gradient(90deg, rgba(241, 164, 8, 1) 0%, rgba(242, 242, 242, 1) 47%, rgba(22, 245, 5, 1) 100%);
+}
+
+#rashi {
+    background: black;
+
+}
+
+.side-heding {
+    color: white;
+    font-size: 25px;
+    text-shadow: -6px -3px 8px #F2FF00;
+}
+
+.card-detiles {
+    font-weight: bold;
+    color: white;
+    background: rgb(8, 113, 20);
+    background: linear-gradient(304deg, rgba(8, 113, 20, 1) 0%, rgba(9, 9, 8, 1) 48%, rgba(245, 5, 191, 1) 100%);
+}
+
+
+
+div.at-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.at-item {
+    color: #3079ed;
+    font-weight: bold;
+    font-size: 3em;
+
+    animation-name: text-shadow-multicolor;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+    /* shorthand
+		animation: text-shadow-multicolor 2s ease 0s infinite normal none;*/
+}
+
+@keyframes text-shadow-multicolor {
+
+    0% {
+        text-shadow: 0 0px 25px #f0f235;
+    }
+
+    33% {
+        text-shadow: 0 0px 45px #0ff;
+    }
+
+    66% {
+        text-shadow: 0 0px 50px #0f0;
+    }
+
+    100% {
+        text-shadow: 0 0px 50px #ff0;
+    }
+}
+
+/* Style for the date display */
+.current-date {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+}
+
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: lightyellow;
+}
+
+.countdown-item {
+    margin: 0 0.5rem;
+    text-align: center;
+}
+
+.countdown-value {
+    font-weight: bold;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.8rem;
+}
+
+#sectionRashi {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+}
+
+
+#tithi-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#tithi {
+    font-size: 50px;
+    color: #ffff3b;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+#datetime {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#telugu-week {
+    font-size: 30px;
+
+    text-align: center;
+    color: white;
+    font-family: 'Dhurjati', cursive;
+}
+
+#star {
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 35PX;
+    font-weight: BOLD;
+    text-shadow: red;
+    text-decoration-color: red;
+    color: #ffff3b;
+}
