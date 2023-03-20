@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Dhurjati&family=Chathura&display=swap');
+
+h1 {
+    font-family: 'Dhurjati', sans-serif;
+}
+
+.heading {
+    color: white;
+    font-size: 50px;
+}
+
+.rasi {
+    height: 150px;
+    width: 150px;
+    border-radius: 50px;
+}
+
+h3 {
+    font-family: 'Dhurjati', cursive;
+}
+
+p {
+    font-family: 'Chathura', sans-serif;
+}
+
+.card {
+
+    background: rgb(241, 164, 8);
+    background: linear-gradient(90deg, rgba(241, 164, 8, 1) 0%, rgba(242, 242, 242, 1) 47%, rgba(22, 245, 5, 1) 100%);
+}
+
+#rashi {
+    background: black;
+
+}
+
+.side-heding {
+    color: white;
+    font-size: 25px;
+    text-shadow: -6px -3px 8px #F2FF00;
+}
+
+.card-detiles {
+    font-weight: bold;
+    color: white;
+    background: rgb(8, 113, 20);
+    background: linear-gradient(304deg, rgba(8, 113, 20, 1) 0%, rgba(9, 9, 8, 1) 48%, rgba(245, 5, 191, 1) 100%);
+}
+
+
+
+div.at-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.at-item {
+    color: #3079ed;
+    font-weight: bold;
+    font-size: 3em;
+
+    animation-name: text-shadow-multicolor;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+    /* shorthand
+		animation: text-shadow-multicolor 2s ease 0s infinite normal none;*/
+}
+
+@keyframes text-shadow-multicolor {
+
+    0% {
+        text-shadow: 0 0px 25px #f0f235;
+    }
+
+    33% {
+        text-shadow: 0 0px 45px #0ff;
+    }
+
+    66% {
+        text-shadow: 0 0px 50px #0f0;
+    }
+
+    100% {
+        text-shadow: 0 0px 50px #ff0;
+    }
+}
+
+/* Style for the date display */
+.current-date {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+}
+
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: lightyellow;
+}
+
+.countdown-item {
+    margin: 0 0.5rem;
+    text-align: center;
+}
+
+.countdown-value {
+    font-weight: bold;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.8rem;
+}
+
+#sectionRashi {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+}
+
+
+#tithi-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#tithi {
+    font-size: 50px;
+    color: #ffff3b;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+#datetime {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#telugu-week {
+    font-size: 30px;
+
+    text-align: center;
+    color: white;
+    font-family: 'Dhurjati', cursive;
+}
+
+#star {
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 35PX;
+    font-weight: BOLD;
+    text-shadow: red;
+    text-decoration-color: red;
+    color: #ffff3b;
+}
+  
+  
+  </script>
+  
+  
+  
+  
+</head>
+
+<body onload="display('sectionRashi')">
+  <script>
+  // Set the countdown date (YYYY/MM/DD)
+const countdownDate = new Date('2023/03/22');
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate.getTime() - now;
+
+    // Calculate days, hours, minutes, and seconds remaining
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Update the countdown timer HTML
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+}
+
+// Update the countdown every second
+setInterval(updateCountdown, 1000);
+
+
+
+// get current Telugu tithi
+function getTithi() {
+    var tithis = ["పాడ్యమి", "విదియ", "తృతీయ", "చతుర్థి", "పంచమి", "షష్ఠి", "సప్తమి", "అష్టమి", "నవమి", "దశమి", "ఏకాదశి", "ద్వాదశి", "త్రయోదశి", "చతుర్దశి", "పౌర్ణమి", "అమావాస్య"];
+    var date = new Date();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var year = date.getFullYear();
+
+    // calculate Telugu month and day
+    var k = Math.floor((year - 1900) * 12.3685);
+    var d = Math.floor(11 * (year % 60));
+    var m = Math.floor((month + 9) % 12);
+    var l = Math.floor((year - 2000 - 1) / 4);
+    var n = 14 - m - l;
+    var tithi = (day + n + d + k) % 15;
+
+    return tithis[tithi];
+}
+
+// display Telugu tithi on the webpage
+document.getElementById("tithi").innerHTML = getTithi();
+
+
+function updateDateTime() {
+    const now = new Date();
+    const date = now.toLocaleDateString();
+    const time = now.toLocaleTimeString();
+    const datetimeString = `${date} \n ${time}`;
+    document.getElementById("datetime").textContent = datetimeString;
+}
+
+setInterval(updateDateTime, 1000);
+
+
+// Define Telugu week days
+const teluguWeekDays = [
+    "ఆదివారం",
+    "సోమవారం",
+    "మంగళవారం",
+    "బుధవారం",
+    "గురువారం",
+    "శుక్రవారం",
+    "శనివారం",
+];
+
+// Get the current Telugu week day
+const teluguWeekDay = teluguWeekDays[new Date().getDay()];
+
+// Display the Telugu week day in the HTML element
+const teluguWeekElement = document.getElementById("telugu-week");
+teluguWeekElement.textContent = `${teluguWeekDay}`;
+
+// GOOGLE
+
+// sTAR 
+
+function displayStar() {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var totalDays = (year) * 365 + Math.floor((year - 1) / 4) + 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + day + 2;
+    if (month > 2 && year % 4 === 0) {
+        totalDays++;
+    }
+    var nakshatras = ['అశ్విని', 'భరణి', 'కృత్తిక', 'రోహిణి', 'మృగశీర్ష', 'ఆర్ద్ర', 'పునర్వసు', 'పుష్య', 'ఆశ్లేష', 'మాఘ', 'పూర్వ ఫాల్గుణి', 'ఉత్తర ఫాల్గుణి', 'హస్త', 'చిత్ర', 'స్వాతి', 'విశాఖ', 'అనురాధ', 'జ్యేష్ఠ', 'మూల', 'పూర్వ ఆషాఢ', 'ఉత్తర ఆషాఢ', 'శ్రవణం', 'ధనిష్ట', 'శతభిష', 'పూర్వ భాద్రపద', 'ఉత్తర భాద్రపద', 'రేవతి'];
+    var nakshatra = nakshatras[(totalDays - 1) % 27];
+    document.getElementById('star').innerHTML = nakshatra;
+}
+
+
+displayStar();
+  </script>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+    <div class="d-flex flex-row justify-content-center bg-black">
+        <nav class="navbar fixed-top-center ">
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button class="btn btn-outline-info" onclick="display('sectionRashi')">
+                                <h3>Home</h3>
+                            </button>
+                            <button class="btn btn-outline-light " onclick="display('sectionHome')">
+                                <h3>రాశి ఫలాలు</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="rashi" class="bg-black">
+
+        <div id="sectionRashi">
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center">
+
+                    <div class="col-12 d-flex flex-row">
+                        <div class='at-item col-12 col-md-6'>
+                            <h1 class=" heading text-center text-shadow-drop-center">శోభకృతు <span class="fs-2">నామసంవత్సరం</span></h1>
+                        </div>
+                        <div class="at-item col-12">
+                            <h1 class="heading text-center text-shadow-drop-center">రాశి ఫలాలు</h1>
+                        </div>
+                    </div>
+
+                    <script src="https://apis.google.com/js/platform.js"></script>
+                    <div class="d-flex flex-row justify-content-center ">
+                        <div class="g-ytsubscribe" data-channelid="UCGuG9Du8IfRGzhd-_nEOS6Q" data-layout="full" data-count="default"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h3 class="d-sm-block d-md-none text-center side-heding  text-shadow-drop-center">vSa Group's <br>వారి ఉగాది శుభాకాంక్షలు</h3>
+                    <h3 class="d-none d-md-block text-center side-heding  text-shadow-drop-center">vSa Group's వారి ఉగాది శుభాకాంక్షలు</h3>
+                </div>
+                <div class="col-12">
+                    <div id="tithi-container">
+                        <div class="text-center text-white">
+                            <h3>నక్షత్రం :: <span id="star"></span></h3>
+                            <H3 class="text-white">తిథి : :<span id="tithi"></span> </h3>
+                        </div>
+                    </div>
+                    <script src="script.js"></script>
+                </div>
+                <div id="telugu-week" class="col-12"></div>
+                <div id="datetime" class="col-12"></div>
+                <div id="countdown" class="col-12">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days"></span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours"></span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes"></span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds"></span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <div id="sectionHome" class="bg-black">
+
+        <div class="container col-12">
+            <div class="row">
+
+
+                <div id="aries" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <img src="https://pngimg.com/d/aries_PNG52.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">మేష రాశి (Aries)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">14</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">14</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">03</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">06</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionMesha')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Taurus" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6">
+                            <img src="https://vedictime.com/_/images/lagna%20images/vrushabha.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">వృషభ రాశి (Taurus)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">14</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">11</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="d-flex flex-row">
+                                    <div class="m-2 col-6">
+                                        <h3 class="">రాజ్య పూజ్యం</h3>
+                                    </div>
+                                    <div class="m-2 col-4">
+                                        <h3 class="">06</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="d-flex flex-row">
+                                    <div class="m-2 col-6">
+                                        <h3 class="">అవమానం</h3>
+                                    </div>
+                                    <div class="m-2 col-4">
+                                        <h3 class="">01</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary " onclick="display('sectionVurashaba')">View More </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Gemini" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6">
+                            <img src="https://vedictime.com/_/images/lagna%20images/mithun.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">మిధునం (Gemini) </h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">11</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionMidhunam')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cancer" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6">
+                            <img src="https://vedictime.com/_/images/lagna%20images/karka.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">కర్కాటకం (cancer)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionKarakam')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Leo" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6">
+                            <img src="https://vedictime.com/_/images/lagna%20images/singh.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">సింహం (Leo) </h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">08</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">14</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">01</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionShimam')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Virgo" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6">
+                            <img src="https://vedictime.com/_/images/lagna%20images/kanya.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">కన్య (Virgo)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">11</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">04</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionKanya')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ibra" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6">
+                            <img src="https://vedictime.com/_/images/lagna%20images/tula.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">తుల (Libra)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">08</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">08</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">07</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionThula')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Scorpio" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <img src="https://vedictime.com/_/images/lagna%20images/vrishchik.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">వృశ్చికం (Scorpio)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">14</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">14</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">03</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">01</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionVurshikam')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Sagittarius" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <img src="https://vedictime.com/_/images/lagna%20images/dhanu.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">ధనస్సు (Sagittarius)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">08</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">06</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">01</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionDhanu')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Capricorn" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <img src="https://vedictime.com/_/images/lagna%20images/makara.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">మకరం (Capricorn) </h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">04</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionMakaram')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Aquarius" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <img src="https://vedictime.com/_/images/lagna%20images/kumbh.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">కుంభం (Aquarius)</h1>
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">05</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">04</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionKunabm')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Pisces" class="col-md-6">
+                    <div class="card m-2 shadow d-flex flex-row">
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <img src="https://vedictime.com/_/images/lagna%20images/meen.png" class="rasi m-2 p-3">
+                            <h1 class="text-center">మీనం (Pisces) </h1>
+
+                        </div>
+                        <div class="d-flex flex-column col-6">
+                            <div class="d-flex flex-column">
+                                <div class="ఆదాయం">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">ఆదాయం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">02</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="వయ్యం ">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">వయ్యం </h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">08</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">01</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="d-flex flex-row">
+                                        <div class="m-2 col-6">
+                                            <h3 class="">అవమానం</h3>
+                                        </div>
+                                        <div class="m-2 col-4">
+                                            <h3 class="">07</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" onclick="display('sectionMenam')">View More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-outline-primar" onclick="display('sectionRashi')"> Back</button>
+    </div>
+    <div class="bg-black">
+        <div id="sectionMesha" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class="">మేషం (Aries) </h1>
+                <br>
+                <h3>అశ్విని, భరణి, కృత్తి 1</h3><br>
+                <br>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    ఏప్రిల్ నెలలో శని, గురు, రాహు, కేతువులు రాశులు మారుతున్న కారణంగా ఈ రాశివారు బాగా లబ్ధి పొందే అవకాశం ఉంది. కొన్ని పరిస్టితులలో మార్పు వచ్చి, గత ఏడాది నాటి కొన్ని ప్రతికూలతలు సానుకూలమయ్యే సూచనలు కనిపిస్తున్నాయి. ప్రధానంగా ఉద్యోగంలో, ఆర్థిక, కుటుంబ వ్యవహారాల మీద వీటి ప్రభావం ఉంటుంది. ఉద్యోగంలో ప్రాధాన్యం సంతరించుకుంటారు. బాధ్యతలు పెరుగుతాయి. ఉద్యోగంలో ప్రమోషన్లు, జీతభత్యాల పెరుగుదల, ఇష్టమైన ప్రాంతాలకు బదిలీ, విదేశాలలో స్థిర నివాసం వంటి మంచి మార్పులు చోటు చేసుకుంటాయి. ఆర్థిక సంబంధమైన ఒడిదుడుకులు బాగా తగ్గుతాయి. కుటుంబంలో ప్రశాంత వాతావరణం ఏర్పడుతుంది. జాతక చక్రంలో గ్రహాల స్థతిగతులు, దశాంతర్దశలు అనుకూలంగా ఉన్న పక్షంలో ఈ అంశాలన్నీ గరిష్ట స్థాయిలో పనిచేస్తాయి. ప్రతిప్రయత్నానికి పట్టుదల చూపించాల్సి ఉంటుంది. సమాజంలో మీ స్థితిగతులను నిలబెట్టుకోవడానికి ఎక్కువగా కృషి చేయాలి. ముందు చూపుతో వ్యవహరించాలి. కొత్త ఉద్యోగ, పెళ్ళి ప్రయత్నాలకు ఇది అనుకూల సమయం. స్థలం కొంటారు. దూర ప్రాంతంలో ఉన్న సంతానం నుంచి శుభవార్తలు వింటారు. సామాజిక కార్యకలాపాల్లో చురుకుగా పాల్గొంటారు. ఆకస్మిక ప్రయాణాలు ఉంటాయి. పాత స్నేహితులు తటస్థపడతారు. విద్యార్థులు పురోగతి సాధిస్తారు. ఆరోగ్యం పరవాలేదు. వృత్తి నిపుణులకు, రియల్‌ ఎస్టేట్‌వారికి అన్ని విధాలా బాగుంటుంది. దూరపు బంధువులకు సంబంధించి దుర్వార్త వింటారు. ఎవరితోనూ వాద వివాదాలకు దిగవద్దు. ప్రేమ వ్యవహారాల్లో ముందడుగు వేస్తారు. సంతానం కలిగే సూచనలు
+                    న్నాయి.</article>
+
+
+                <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
+            </div>
+        </div>
+        <div id="sectionVurashaba" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class="">వృషభం (Taurus)</h1>
+                <br>
+                <h3>కృతిక 2,3,4పాదములు,
+                    రోహిణి 4పాదములు,
+                    మృగశిర 1,2 పాదములు</h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    భాగ్య స్థానంలో శని, దశమంలో గురువు, వ్యయంలో రాహువు, షష్టంలో కేతువు ఉండడం వల్ల ఈ రాశివారికి విదేశాల్లో ఉద్యోగం, ధనలాభం, పేరు ప్రతిష్టలు, ఉద్యోగంలో ప్రమోషన్లు వంటివి సంభవిస్తాయి. అయితే, మధ్య మధ్య అనారోగ్యాలు తప్పకపోవచ్చు. మొత్తం మీద ఈ ఏడాదంతా మానసికంగా ప్రశాంతంగా గడుపుతారు. ఆరోగ్య పరిరక్షణకు అత్యంత (ప్రాధాన్యం ఇవ్వాల్సి ఉంటుంది. అనుకోకుండా ఆదాయం పెరుగుతుంది. రాజకీయాల్లో ప్రవేశించే అవకాశం ఉంది. సంఘంలో పలుకుబడి పెరుగుతుంది. ఉద్యోగరీత్యా గానీ, చదువుల రీత్యా గానీ దూర ప్రాంతాలకు వెళ్లే అవకాశం ఉంది.ఉద్యోగంలో పని ఒత్తిడి పెరిగినప్పటికీ లెక్కచేయరు. అధికారులు మీ శ్రమకు, ప్రతిభకు విలువనిస్తారు. ఆధ్యాత్మిక చింతన పెరుగుతుంది. అనవసర పరిచయాలకు వీలైనంత దూరంగా ఉండాలి. ఇబ్బ౦దుల్లో పడే అవకాశం ఉంది. శుభవార్తా శ్రవణం ఎక్కువగానే ఉన్నప్పటికీ మధ్య మధ్య దుర్వార్తలు కూడా చెవిన పడవచ్చు. పోరాడైనా విజయాలు సాధించాలనే పట్టుదల పెరుగుతుంది. మధ్య మధ్య ఆటంకాలు ఎదురవుతున్నా వాటిని అధిగమిస్తారు. విద్యార్థులు సునాయాసంగా ఉత్తీర్ణత సాధిస్తారు. లాయర్లకు అనుకూల సమయం. డాక్టర్లకు పని ఒత్తిడి అధికంగా ఉంటుంది. హృద్రోగ నిపుణులకు ఉన్నత శిక్షణకు విదేశాల నుంచి అవకాశం వస్తుంది. టెక్నాలజీ నిపుణులకు కొత్త ప్రాజెక్టులు అందుబాటులోకి వస్తాయి. కోపతాపాలకు ఇది సమయం కాదు. స్నేహితురాలితో పెళ్లి జరిగే అవకాశం ఉంది. తల్లితండ్రుల్లో ఒకరి ఆరోగ్యం ఆందోళన కలిగించే అవకాశం ఉంది. స్నేహితులతో విభేదాలు తలెత్తే సూచనలున్నాయి. కోర్టు కేసు పరిష్కారం అవుతుంది. కుమారుడు విదేశాల్లో ఉద్యోగం సంపాదిస్తాడు.మొక్కుబడులు తీర్చుకోండి.
+
+                </article>
+
+                <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
+            </div>
+        </div>
+        <div id="sectionMidhunam" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class="">మిధునం (Gemini)</h1>
+                <br>
+                <h3>మృగశిర 3,4, అర్ర, పునర్వసు 1,2,3</h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    ఏప్రిల్ తర్వాత నుంచి నవమ శని, దశమ గురువు, లాభస్థానంలో రాహువు, పంచమంలో కేతువు కారణంగా ఈ సంవత్సరం కాస్తంత ప్రశాంతంగా గడిచే అవకాశం ఉంది. ఇక ప్రతి పనీ ఆలస్యం అయ్యే అవకాశం ఉన్నప్పటికీ, తలచిన పనుల్లో కొన్ని నెరవేరి సంతృప్తిని కలిగిస్తాయి.గత ఏడాది కంటే అనుకూలతలు బాగా పెరుగుతాయి. గౌరవ అభిమానాలు వృద్ది చెందుతాయి. ఆరోగ్యంలో మంచి మార్పులు చోటు చేసుకుంటాయి. ఆస్తుల కొనుగోలు మీద అసక్తి చూపిస్తారు. ప్పాటును గానీ, ప్లాటును గానీ కొనుగోలు చేసే ప్రయత్నం చేస్తారు. మధ్య మధ్య ఆర్థిక సర్దుబాటులో ఏర్పడినా లోటు కనిపించకు ౦డా జాగ్రత్త పడతారు.శుభకార్యాల్లో పాల్గొంటారు. నంఘంలో గౌరవ మర్యాదలు పెరుగుతాయి. విదేశాల్లో ఉన్న సంతానం నుంచి శుభవార్తలు అందుకుంటారు. సంతాన యోగానికి సంబంధించి తీపి కబురు వింటారు. కుటుంబంలో బాధ్యతలు పెరుగుతాయి. అనారోగ్యాలు, అనుకోని ఖర్చులు, ఆదాయంలో తగ్గుదల వంటి సమస్యల నుంచి కాస్తంత బయటపడతారు. అయితే, ఇష్టం లేని ప్రాంతాలరు స్థాన చలనం, ప్రమోషన్గు ఆగిపోవడం, జీవిత భాగస్వామికి ఆరోగ్యం బాగా లేకపోవడం వంటివి జరగవచ్చు. జాతక చక్రంలో గ్రహాల స్థితిగతులు, దశాంతర్జశలు బాగున్నట్టయితే, కష్టనష్టాలు బాగా తగ్గే అవకాశం ఉంది. సన్నిహితుల్లో ఒకరి గురించి దుర్వార్త వింటారు. కొందరు స్నేహితుల తీరు చూసి ఆందోళన చెందుతారు. పని విషయంలో పై అధికారుల నుంచి విమర్శలకు అవకాశముంది. సైన్స్‌, ఐ.టి విద్యార్థులు రాణిస్తారు. ప్రేమ వ్యవహారాల్లో అచితూచి అడుగువేయడం మంచిది. నిరుత్సాహానికి గురయ్యే సూచనలున్నాయి. రాజకీయ నాయకులు, సామాజిక రంగంలోని వారు అభివృద్ధి సాధిస్తారు.
+
+                </article>
+
+
+                <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
+
+            </div>
+        </div>
+        <div id="sectionKarakam" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class="">కర్కాటకం (cancer)</h1>
+                <br>
+                <h3>పునర్వసు 4, పుష్యమి, ఆశ్రేష</h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    ఏప్రిల్ తర్వాత అష్టమంలో శని, నవమంలో గురువు, దశమంలో రాహువు, నాలుగింట కేతువు ఉన్నందువల్ల పరిస్థితులు బాగా సానుకూలపడతాయి. ఈ ఏడాదంతా అనుకూల ఫలితాలతో సాగిపోతుంది. జాతక చక్రం పరిస్థితి కూడా సరిగా ఉంటే మీకు ఏప్రిల్‌ తర్వాత ఆకస్మిక ధనలాభానికి అవకాశం ఉంది. ఇతరుల విషయాలకు దూరంగా ఉండడం మంచిది. సమస్యలను ఎదుర్కొనే సహనం, ఓర్పు అలవరచుకుంటారు. ఇక కుమారుడికి గానీ, కుమార్తెకు గానీ విదేశీ కంపెనీలో మంచి ఉద్యోగం లభించవచ్చు. పిల్లలు చదువుల్లో కూడా పురోగతి సాధిస్తారు. తల్లితండ్రులు, కుటుంబ సభ్యులతో తీర్ధయాత్రలకు వెళతారు. ఇక ఈ ఏడాది బంధువుల తాకిడి ఎక్కువగా ఉంటుంది. సమాజంలో పలుకుబడి కలిగినవారితో పరిచయాలు ఏర్పడతాయి. సామాజిక హోదా పెరుగుతుంది. ఆధ్యాత్మిక చింతన మీద
+
+                    <br> <br> మోజు పెంచుకుంటారు. ఆరోగ్యానికి, ఆదాయానికి తిరుగులేదు. విందులు వినోదాల్లో పాల్గొంటారు. భార్యాపిల్లలతో కాలక్షేపం చేస్తారు. ఎవరు స్నేహితులో, ఎవరో శత్రువులో తెలుసుకుని మెలగండి. ఏప్రిల్‌ వరకు వృత్తి ఉద్యోగాల్లో అదనపు బాధ్యతలు మోయాల్సి వస్తుంది. ఇష్టం లేని ప్రయాణాలు చేయాల్సి వస్తుంది. పై అధికారుల నుంచి వేధింపులు తప్పకపోవచ్చు. అనుకోకుండా బంధువులు ఇ౦టికి వచ్చే సూచనలున్నాయి. కొత్త వస్తువులు కొనుగోలు చేస్తారు. విద్యార్ధులు బాగా శ్రమ పడాల్సి ఉంటుంది. చెడు స్నేహాల వైపు మొగ్గు చూపే అవకాశం ఉంది. స్నేహితురాలితోనే వివాహం జరిగేఅవకాశం ఉంది. ఐ.టి నిపుణులకు, అధ్యాపకులకు అన్ని విధాలా బాగుంటుంది. ఆర్థిక లావాదేవీలకు వీలైనంత దూరంగా ఉండండి.
+                </article>
+
+
+                <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
+
+            </div>
+        </div>
+
+        <div id="sectionShimam" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class="">సింహం (Leo)</h1>
+                <br>
+                <h3> మఖ, పుబ్బ, ఉత్తర 1 </h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    <ul>
+                        <li>ఏప్రిల్ నుంచి ఏడవ రాశిలో శని, ఎనిమిదవ రాశిలో గురువు, తొమ్మిదవ రాశిలో రాహువు, మూడవ ఇంట కేతువు సంచరిస్తున్నందువల్ల,</li>
+                        <li>ఉద్యోగ జీవితంలో బాగా మార్పులు చోటు చేసుకుంటాయి. ఆశించిన స్థాయిలో ఆశాజనకంగా ఉంటుంది. </li>
+                        <li>ఉద్యోగంలో స్థిరత్వం ఏర్పడుతుంది. నిరుద్యోగులు మంచి ఉద్యోగం సంపాదించుకుంటారు.</li>
+                        <li>పెల్లి సంబంధం కుదురుతుంది. </li>
+                        <li>ఆదాయం నిలకడగా ఉంటుంది కానీ, ఖర్చులు బాగా పెరుగుతాయి. డబ్బు నష్టపోతారు.</li>
+                        <li>ఇల్లు కొనడం, ఇల్లు కట్టడం, పెళ్లి సంబ౦ధం కుదర్చుకోవడం వంటి శుభ కార్యాలు జరిగే అవకాశం ఉంది.</li>
+                        <li>జాతక చక్రం బాగుంటే ఈ మార్పులు గరిష్ట స్థాయిలో అనుభవానికి వస్తాయి.</li>
+                        <li>ఆశించిన పనులన్నీ దాదాపు పూర్తవుతాయి. ప్రతి ప్రయత్నానికి పట్టుదలను జోడించాల్సిన అవసరం వస్తుంది. అవకాశాల్ని జారవిడవకుండా వ్యవహరించండి.</li>
+                        <li>బ౦ధుమిత్రులతో విభేదాలు తలెత్తకుండా జాగ్రత్తగా మెలగాల్సిన అవసరం ఉంది.</li>
+                        <li>ఆరోగ్యం విషయంలో అన్ని విధాలా అనుకూలమయిన సమయం.</li>
+                        <li>ఆధ్యాత్మిక చింతన పెరుగుతుంది. ఆదాయం పెరుగుతుంది. సమయానికి చేతికి డబ్బు అంది అవసరాలు తీరతాయి.</li>
+                        <li>స్నేహితులతో కలిసి విందులు, వినోదాల్లో పాల్గొంటారు. భార్యాపిల్లలతో విహారానికి వెడతారు.</li>
+                        <li>విద్యార్థులు సునాయాసంగా పురోగతి సాధిస్తారు.</li>
+                        <li>డాక్టరు, టెక్నాలజీ నిపుణులు, సామాజిక సేవా రంగాల్లో ఉన్నవారికి సమయం అనుకూలంగాఉంది.</li>
+                        <li>భార్య వైవు బంధువులు ఇంటికి వస్తారు.</li>
+                        <li>కొత్త వస్తువులు కొనుగోలు చేస్తారు.</li>
+                        <li>ప్రేమ వ్యవహారాల్లో దూసుకుపోతారు.</li>
+                        <li>బ్యాంకర్లు, వడ్డీ వ్యాపారులు, ఆర్థిక రంగంలో ఉన్నవారు అనూహ్యమైన సత్ఫలితాలు సాధిస్తారు.</li>
+                        <li>ఐ.టి నిపుణులకు విదేశాల నుంచి ఆఫర్లు వచ్చేి.</li>
+                    </ul>
+                </article>
+                <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
+
+            </div>
+        </div>
+
+        <div id="sectionKanya" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class="">కన్య (Virgo)</h1>
+                <br>
+                <h3> ఉత్తర 2,3,4, హస్త, చిత్త 1,2 </h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    <ul>
+                        <li>ఈ ఏడాది ఏప్రిల్ తర్వాత ఆరవ రాశిలో శని, ఏడవ రాశిలో గురువు, ఎనిమిదిలో రాహువు, రెండులో కేతువు సంచరించడం వల్ల అత్యుత్తమ ఫలితాలు అనుభవానికి వస్తాయి.</li>
+                        <li>శని, గురువులు అత్యుత్తమ ఫలదాతలుగా ఉన్నందువల్ల ఈ ఏడాది అన్నిటా స్థిరమైన దృక్పథంతో ముందుకు సాగుతారు.</li>
+                        <li>మంచి విజయాలు, సాఫల్యాలను మీ ఖాతాలో వేసుకుంటారు. అనుకున్నవి సాధిస్తారు. మనసులోని కోరికలు నెరవేరుతాయి.</li>
+                        <li>విదేశాల్లో ఉద్యోగం, విదేశీ చదువులు, సంతానం అభివృద్ది, ఆదాయం పెరుగుదల, ఆధ్యాత్మిక చింతన వంటివి అనుభవానికి వస్తాయి.</li>
+                        <li>జాతక చక్రం అనుకూలంగా ఉన్న పక్షంలో ఈ ఏడాది బాగా గడిచిపోతుందనే చెప్పవచ్చు.</li>
+                        <li>పిల్లల్లో ఒకరికి దూర ప్రాంతంలో మంచి కంపెనీలో ఉద్యోగ౦ లభిస్తుంది. పిల్లలకు పెల్లి సంబంధాలు కుదురుతాయి.</li>
+                        <li>భార్య ఆరోగ్యం మెరుగుపడుతుంది.</li>
+                        <li>ఇతరత్రా, అవివాహితులకు వివాహ ప్రయత్నాలు అనుకూలిస్తాయి.</li>
+                        <li>విదేశాల నుంచి ఆశించిన సమాచారం అందుతుంది.</li>
+                        <li>ఆదాయం నిలకడగా ఉంటుంది.</li>
+                        <li>సంతానం నుంచి శుభవార్తలు వింటారు.</li>
+                        <li>వీసా సమస్యలు ఏమన్నా ఉంటే పరిష్కారమవుతాయి.</li>
+                        <li>అనవసర పరిచయాలకు దూరంగా ఉండండి.</li>
+                        <li>ఉద్యోగంలో పై అధికారుల మెప్పు పొందుతారు.</li>
+                        <li>విదేశీ పర్యటన సూచనలున్నాయి.</li>
+                        <li>విద్యార్థులకు అనుకూల౦గా ఉంది.</li>
+                        <li>స్నేహితురాలితో ప్రేమ వ్యవహారం పెళ్లికి దారితీసే అవకాశం ఉంది.</li>
+                        <li>లాయర్దు, బ్యాంకర్లు, అర్థిక నిపుణులు, కళా సాహిత్య రంగాలకు చెందినవారు, సంగీత విద్వాంసులకు సమయం అనుకూలంగా ఉంది.</li>
+                        <li>శుభవార్తలు వింటారు. కోర్టు కేసులో విజయం సాధిస్తారు. ఆకస్మిక ధనలాభ సూచనలున్నాయి.</li>
+
+                    </ul>
+                </article>
+
+
+                <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
+
+            </div>
+        </div>
+        <div id="sectionMakaram" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class="">మకరం (Capricorn) </h1>
+                <br>
+                <h3> ఉత్తరాషాఢ 2,3,4, శ్రవణం, ధనిష్ట 1,2 </h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    <ul>
+                        <li>ఏప్రిల్ తర్వాత శని కుంభంలోనూ, గురువు మీనంలోనూ, రాహువు చతుర్ధంలోనూ, కేతువు దశమంలోనూ సంచరించడం వల్ల మిశ్రమ ఫలితాలు ఎక్కువగా అనుభవానికి వస్తాయి. </li>
+                        <li> ఆర్థిక నష్టాలు, ఆస్తినష్టాలు, అనారోగ్యాలు, కుటుంబ సమస్యలు, ఉద్యోగంలో ఇబ్బందులు, విపరీతమైన తిప్పట, అనవసర ఖర్చులు వంటివి తప్పకపోవచ్చు.</li>
+                        <li> ఈ రాశివారు ప్రతి క్షణం అప్రమత్తంగా ఉండాల్సిన అవసరం ఉంది.</li>
+                        <li>ఆదాయం మెరుగుపడుతుంది. ఆరోగ్య సంరక్షణ తప్పనిసరి</li>
+                        <li>కుటుంబంలోని పెద్దల ఆరోగ్యం పట్ల శ్రద్ధ వహించాలి. గౌరవానికి ఇబ్బంది లేదు. </li>
+                        <li>వాణిజ్యం, బ్యాంకింగ్ మరియు ఫైనాన్స్ నిపుణులకు మంచి సమయం. </li>
+                        <li> ఇల్లు లేని వారు ఇల్లు కొనే అవకాశం ఎక్కువ. </li>
+                        <li> ప్రేమ వ్యవహారాలు అనుకున్నంత సంతృప్తిని ఇవ్వవు.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <div id="sectionThula" class="m-2">
+            <div class="card m-2 p-3">
+                <h1 class="text-center ">తుల (Libra)</h1><br>
+                <h3 class="text-center "> చిత్త 3,4, స్వాతి, విశాఖ 1,2,3 </h3>
+            </div>
+            <div class="card m-2 p-3">
+                <article>
+                    <h6 class="fw-bold">
+                        <ul>
+                            <li>
+                                ఏప్రిల్ 5న శని, 6న గురు, 7న రాహువు, 1న కేతువు ప్రతికూల ఫలితాలను ఇస్తారు.</li>
+                            <li>ప్రతి పనికి శ్రమ అవసరం.</li>
+                            <li>ఆర్థిక కార్యక్రమాలు సజావుగా సాగుతాయి. అవసరమైన విధంగా సర్దుబాట్లు చేస్తారు.</li>
+                            <li>జ్ఞాన వైరుధ్యాలు తలెత్తే అవకాశం ఉంది.</li>
+                            <li>వృత్తి ఉద్యోగాలలో శ్రమ పెరిగే సూచనలున్నాయి.</li>
+
+                            <li>ఉద్యోగం కోల్పోవడం, కొత్త ఉద్యోగం రాకపోవడం, చదువులో ఇబ్బందులు, తల్లికి అనారోగ్యం, దుర్వార్తలు, పునరావాసం, ఇల్లు అమ్ముకోవడం, ఆస్తికి సంబంధించిన కేసుల్లో చిక్కుకోవడం, కోర్టు కేసుల్లో వైఫల్యాలు.</li>
+
+                            <li>జాతక చక్రం బాగుంటే ఫలితాలు పూర్తిగా భిన్నంగా ఉంటాయి.</li>
+                            <li>చాలా కాలంగా పెండింగ్ లో ఉన్న కొన్ని పనులు పూర్తవుతాయి</li>
+
+                            <li>గ్రహాల సంచారాన్ని బట్టి చూస్తే వివాహ ప్రయత్నాలు చురుకుగా సాగుతాయి.</li>
+                            <li>ఉద్యోగంలో ఆశించిన మార్పులు చోటు చేసుకుంటాయి.</li>
+                            <li>మిత్రులకు పార్టీ విందులలో పాల్గొంటారు.</li>
+                            <li>అన్నదమ్ముల మధ్య విభేదాలు వచ్చే అవకాశం ఉంది.</li>
+                            <li>విదేశాల్లోని పిల్లల నుంచి ఆశించిన శుభవార్తలు అందుకుంటారు.</li>
+                            <li>దూర ప్రయాణాలు, తీర్థయాత్రలకు ప్రణాళికలు వేస్తారు.</li>
+                            <li>సంతాన యోగం సాధ్యమే.</li>
+                            <li>ఆరోగ్యానికి ఎలాంటి హానీ ఉండదు.</li>
+                            <li>ఆదాయానికి కొరత లేదు.</li>
+                            <li>విద్యార్థులు పురోగతి సాధిస్తారు.</li>
+                            <li>ప్రేమ వ్యవహారాలు అనుకూలిస్తాయి.</li>
+                            <li>ఆహారం మరియు ఆతిథ్య రంగానికి, చిన్న వ్యాపారులకు మరియు రైతులకు మొత్తం మీద మంచి సమయం.
+                            </li>
+                        </ul>
+                    </h6>
+                    <button class="btn btn-primary" onclick="display('sectionHome')">back</button>
+                </article>
+            </div>
+        </div>
+        <div id="sectionVurshikam" class="m-2">
+            <div class="card m-2 p-3">
+                <h1 class="text-center ">వృశ్చికం (Scorpio)</h1><br>
+                <h3 class="text-center "> విశాఖ 4, అనురాధ, జ్యేష్ఠ </h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    <h6 class="fw-bold">
+                        <UL>
+                            <li>
+                                నాల్గవ ఇంట్లో శని, ఐదవ ఇంట్లో బృహస్పతి, ఆరవ ఇంట్లో రాహువు, కేతువు ఏప్రిల్ లో సంచరించడం వల్ల ప్రతికూల ఫలితాలు తగ్గే అవకాశం ఉంది. నాల్గవ స్థానంలో శని సంచారం కొంచెం చెడు ఫలితాలను ఇస్తుంది.</li>
+                            <li>ఏప్రిల్ తర్వాత బృహస్పతి సంచార ప్రభావం కొంత మంచి ఫలితాలను ఇస్తుంది. కాలం గతం కంటే ఆశాజనకంగా గడిచిపోతుంది. వృత్తి ఉద్యోగాలలో పురోగతికి అవకాశం ఉంది.</li>
+
+                            <li>అదికార యోగం కూడా సాధ్యమే..</li>
+                            <li>ఇంతలో విపరీతమైన మలుపులు, ప్రతి పనిలో జాప్యం, అనవసర ఖర్చులు, అనవసర ప్రయాణాలు, ఉద్యోగ మార్పు, సోదరులతో విభేదాలు, పొరుగువారితో సమస్యలు, భార్యకు అనారోగ్యం.
+                                జాతక చక్రంలో గ్రహాల స్థానాలు, దశాంతర్జషాలు బాగుంటే ఈ ఫలితాలు తగ్గుతాయి..</li>
+                            <li> లేకపోతే, గ్రహాల సంచారాన్ని బట్టి చూస్తే, చిన్న సమస్యలకు దూరంగా సంవత్సరం మొత్తం దాదాపు ప్రశాంతంగా గడిచిపోతుంది.
+                            <li>మీ కోపాన్ని నియంత్రించుకోండి..</li>
+                            <li>జీవితంలో ఎదగాలనే కోరిక పెరుగుతుంది మరియు కొత్త ఆదాయ వనరులను కనుగొనే ప్రయత్నాలు చేస్తారు..</li>
+                            <li>కొత్త స్నేహితులను కలుస్తారు..</li>
+                            <li>రియల్ ఎస్టేట్ వారికి చాలా మంచిది..</li>
+                            <li>భార్యాపిల్లలు ఎంతో సహకరిస్తారు..</li>
+                            <li>బంధువులతో విభేదాలు తలెత్తే అవకాశం ఉంది..</li>
+                            <li>విద్యార్థులు శ్రమతో అభివృద్ధి చెందుతారు..</li>
+                            <li>రాజకీయాలు, సామాజిక సేవా రంగాల వారికి సమయం అనుకూలంగా ఉంటుంది..</li>
+                            <li>ప్రేమ వ్యవహారాల్లో ముందడుగు వేస్తారు..</li>
+                            <li>ఉద్యోగానికి సంబంధించి విదేశాల నుంచి ఆశించిన సమాచారం అందుతుంది. మీ ఆరోగ్యాన్ని జాగ్రత్తగా చూసుకోండి.
+                            </li>
+                        </UL>
+                    </h6>
+                    <button class="btn btn-primary" onclick="display('sectionHome')">back</button>
+                </article>
+            </div>
+        </div>
+        <div id="sectionKunabm" class="m-2">
+            <div class="card m-2">
+                <h1 class="text-center "> కుంభం (Aquarius) </h1><br>
+                <h3 class="text-center "> ధనిష్ట 3,4, శతభిషం, పూర్వాభాద్ర 1,2,3్ఠ </h3>
+            </div>
+            <div class="card-detiles m-2">
+                <article>
+                    <ul>
+                        <li>ఏప్రిల్ తర్వాత శని ఒకటవ రాశిలోనూ, గురువు రెండవ రాశిలోనూ, రాహువు 3లోనూ, కేతువు 9లోనూ సంచరించడం వల్ల ఎక్కువగా సానుకూల ఫలితాలు మీ ముందుకు వస్తాయి</li>
+                        <li>లాభార్జన కోసం ఇల్లు లేదా భూమిని విక్రయించడం, వైద్య ఖర్చులు తగ్గించడం, ప్రతి పనిని సులభంగా పూర్తి చేయకపోవడం, అనవసర ఖర్చులను తగ్గించడం ద్వారా పొదుపు చర్యలు తీసుకోవడం, బ్యాంక్ బ్యాలెన్స్ నిర్వహించడం, ఉద్యోగం మారడం వంటి అనుభవాలను అనుభవిస్తారు.</li>
+                        <li>జాతక చక్రంలో గ్రహాలు మరియు దశలు మంచిగా ఉంటే, పరిస్థితి కొద్దిగా మెరుగుపడుతుంది.</li>
+                        <li>ఇతర గ్రహాల సంచారాలు కూడా అనుకూలంగా ఉంటాయి, కాబట్టి మొత్తంగా రోజులు బాగా గడిచిపోతాయి. చిన్ననాటి స్నేహితులతో సరదాగా గడుపుతారు.</li>
+                        <li>ఆరోగ్యానికి, ఆదాయానికి లోటు లేదు. రోజులో శని కారణంగా తిప్పుట ఎక్కువగా ఉన్నా అనుకున్న పనులు పూర్తవుతాయి.</li>
+                        <li>ఆలోచించకుండా ఏ నిర్ణయం తీసుకోవద్దు. మీకు నచ్చని కొన్ని పనులు చేయవలసి ఉంటుంది. డబ్బు విషయంలో ఎవరైనా మోసపోతారు. ఆర్థిక లావాదేవీల్లో తలదూర్చకండి.</li>
+                        <li>విదేశీ ప్రయాణ సూచనలు ఉన్నాయి. ఉద్యోగానికి సంబంధించి మీకు అనుకూలమైన సమాచారం అందుతుంది. అప్పులు తీరుతాయి. వివాహ సంబంధ ప్రయత్నాలు చేస్తారు.</li>
+                        <li>విద్యార్థులు విశ్రాంతి తీసుకోవాలి. చెడు స్నేహాలకు, చెడు వ్యసనాలకు దూరంగా ఉండటం మంచిది.</li>
+                        <li>న్యాయ, పోలీసు, సైనిక రంగాల వారికి అనుకూలమైన సమయం.</li>
+                        <li>ఎంత ప్రయత్నించినా ప్రేమ వ్యవహారాలు ఆశించిన రీతిలో సాగవు.</li>
+
+                    </ul>
+                    <button class="btn btn-primary" onclick="display('sectionHome')">Back to Home</button>
+                </article>
+
+            </div>
+        </div>
+        <div id="sectionDhanu" class="m-2">
+            <div class="card-detiles m-2">
+                <h1 class="text-center "> ధనస్సు (Sagittarius)</h1><br>
+                <h3 class="text-center "> మూల, పూర్వామాఢ, ఉత్తరాషాఢ </h3>
+            </div>
+            <div class="card-detiles m-2">
+                <article>
+                    <ul>
+                        <li> ఏప్రిల్ తర్వాత నుంచి ఏలిన్నాటి శని తొలగుతుంది. </li>
+                        <li> నాలుగింట గురువు, రాహువు అయిదులో, కేతువు ఏకాదశంలో సంచరిస్తాయి. </li>
+                        <li>ఆరోగ్యం మరియు ఆదాయ పరంగా ఇవి చాలా అనుకూలంగా లేవు.</li>
+                        <li>ఏప్రిల్ తర్వాత పరిస్థితి సానుకూలంగా మారే అవకాశం ఉంది.</li>
+                        <li>నాల్గవ అధిపతి సంచారం వల్ల కొన్ని ముఖ్యమైన పనులు ఆలస్యంగా పూర్తయ్యే అవకాశం ఉన్నప్పటికీ, ఆదాయం, వ్యాపారాభివృద్ధి, ప్రమోషన్, కొత్త ఉద్యోగం, విదేశీ ప్రయాణం, శుభకార్యాలు, శుభవార్తలు పెరిగే అవకాశం ఉంది.</li>
+                        <li>మీ ఉద్యోగ ప్రయత్నాలు మరియు వివాహ ప్రయత్నాలు ఈ సంవత్సరం ముగిసే అవకాశం ఉంది.</li>
+                        <li>వివాదాలకు దూరంగా ఉండండి.</li>
+                        <li>రియల్ ఎస్టేట్ వ్యక్తులకు మరియు బ్యాంకర్లకు మంచి సమయం.</li>
+                        <li>కోర్టు కేసులు అనుకూలంగా పరిష్కారమవుతాయి.</li>
+                        <li>ఏప్రిల్ మరియు సెప్టెంబర్ మధ్య విదేశీ ప్రయాణం సాధ్యమవుతుంది.</li>
+                        <li>దూరపు బంధువుతో వివాహం.</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="display('sectionHome')">Back to Home</button>
+                </article>
+            </div>
+        </div>
+        <div id="sectionMenam" class="m-2">
+            <div class="text-center card m-2 p-3">
+                <h1 class=""> మీనం (Pisces) </h1>
+                <br>
+                <h3> పూర్వాభాద్ర 4, ఉత్తరాభాద్ర, రేవతి </h3>
+            </div>
+            <div class="card-detiles m-2 p-3">
+                <article>
+                    <ul>
+                        <li>ఏప్రిల్ శని 12వ స్థానంలో, గురుడు 1వ స్థానంలో, రాహువు 2వ స్థానంలో, కేతువు 8లో సంచరించిన తర్వాత మిశ్రమ ఫలితాలు ఉంటాయి.</li>
+                        <li>ముఖ్యంగా ఆదాయం స్థిరంగా ఉంటే. ఖర్చులు పెరుగుతాయి. </li>
+                        <li> ఆ తర్వాత విదేశీ కంపెనీలలో ఉద్యోగాలు, పదోన్నతులు, ఆదాయం పెరగడం, పలుకుబడి ఉన్న వ్యక్తులతో పరిచయాలు, ఆకస్మిక ధనలాభం, శుభకార్యాలు, శుభవార్తలు అనుభవిస్తారు.</li>
+                        <li>పెండింగ్ లో ఉన్న పనులు చాలా వరకు పూర్తవుతాయి. ఆదాయం పెరుగుతుంది</li>
+                        <li>ఇల్లు లేదా స్థలం కొనుగోలు చేసేందుకు ప్రయత్నాలు చేస్తారు. గతంలో మీ దగ్గర డబ్బులు తీసుకున్న వారు తిరిగి తెచ్చుకుంటారు.</li>
+                        <li>వృత్తి ఉద్యోగాలలో చిన్న చిన్న ఆటంకాలు ఎదురైనా అభివృద్ధి చెందే అవకాశం ఉంది.</li>
+                        <li>అనవసర పరిచయాలకు దూరంగా ఉండండి</li>
+                        <li>కొత్త ఉద్యోగ ప్రయత్నాలు సఫలమయ్యే అవకాశం ఉంది. ఆకస్మిక ప్రయాణాలు మిస్ కాకపోవచ్చు</li>
+                        <li>సంఘంలో గౌరవం పెరుగుతుంది. శత్రువులు మిత్రులవుతారు.</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="display('sectionHome')">Back to Home</button>
+                </article>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
