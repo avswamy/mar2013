@@ -6,9 +6,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script>
+
+</head>
+
+<body>
   
-  @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Dhurjati&family=Chathura&display=swap');
+  <script>
+  
+    @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Dhurjati&family=Chathura&display=swap');
 
 h1 {
     font-family: 'Dhurjati', sans-serif;
@@ -26,7 +31,7 @@ h1 {
 }
 
 h3 {
-    font-family: 'Dhurjati', cursive;
+    font-family: 'Akaya Telivigala', cursive;
 }
 
 p {
@@ -53,7 +58,7 @@ p {
 .card-detiles {
     font-weight: bold;
     color: white;
-    background: rgb(8, 113, 20);
+    background: background: rgb(8, 113, 20);
     background: linear-gradient(304deg, rgba(8, 113, 20, 1) 0%, rgba(9, 9, 8, 1) 48%, rgba(245, 5, 191, 1) 100%);
 }
 
@@ -72,7 +77,7 @@ div.at-container {
     font-size: 3em;
 
     animation-name: text-shadow-multicolor;
-    animation-duration: 5s;
+    animation-duration: 2s;
     animation-timing-function: ease;
     animation-delay: 0s;
     animation-iteration-count: infinite;
@@ -86,764 +91,138 @@ div.at-container {
 @keyframes text-shadow-multicolor {
 
     0% {
-        text-shadow: 0 0px 25px #f0f235;
+        text-shadow: 0 0px 15px #f0f;
     }
 
     33% {
-        text-shadow: 0 0px 45px #0ff;
+        text-shadow: 0 0px 15px #0ff;
     }
 
     66% {
-        text-shadow: 0 0px 50px #0f0;
+        text-shadow: 0 0px 10px #0f0;
     }
 
     100% {
-        text-shadow: 0 0px 50px #ff0;
+        text-shadow: 0 0px 10px #ff0;
     }
 }
-
-/* Style for the date display */
-.current-date {
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-    margin: 20px;
-}
-
-
-#countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: lightyellow;
-}
-
-.countdown-item {
-    margin: 0 0.5rem;
-    text-align: center;
-}
-
-.countdown-value {
-    font-weight: bold;
-}
-
-.countdown-label {
-    display: block;
-    font-size: 0.8rem;
-}
-
-#sectionRashi {
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-}
-
-
-#tithi-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-#tithi {
-    font-size: 50px;
-    color: #ffff3b;
-    font-family: 'Akaya Telivigala', cursive;
-}
-
-#datetime {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-}
-
-#telugu-week {
-    font-size: 30px;
-
-    text-align: center;
-    color: white;
-    font-family: 'Dhurjati', cursive;
-}
-
-#star {
-    font-family: 'Akaya Telivigala', cursive;
-    font-size: 35PX;
-    font-weight: BOLD;
-    text-shadow: red;
-    text-decoration-color: red;
-    color: #ffff3b;
-}
-  
   
   </script>
   
   
   
   
-</head>
-
-<body onload="display('sectionRashi')">
-  <script>
-  // Set the countdown date (YYYY/MM/DD)
-const countdownDate = new Date('2023/03/22');
-
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = countdownDate.getTime() - now;
-
-    // Calculate days, hours, minutes, and seconds remaining
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Update the countdown timer HTML
-    document.getElementById('days').innerHTML = days;
-    document.getElementById('hours').innerHTML = hours;
-    document.getElementById('minutes').innerHTML = minutes;
-    document.getElementById('seconds').innerHTML = seconds;
-}
-
-// Update the countdown every second
-setInterval(updateCountdown, 1000);
-
-
-
-// get current Telugu tithi
-function getTithi() {
-    var tithis = ["పాడ్యమి", "విదియ", "తృతీయ", "చతుర్థి", "పంచమి", "షష్ఠి", "సప్తమి", "అష్టమి", "నవమి", "దశమి", "ఏకాదశి", "ద్వాదశి", "త్రయోదశి", "చతుర్దశి", "పౌర్ణమి", "అమావాస్య"];
-    var date = new Date();
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
-    var year = date.getFullYear();
-
-    // calculate Telugu month and day
-    var k = Math.floor((year - 1900) * 12.3685);
-    var d = Math.floor(11 * (year % 60));
-    var m = Math.floor((month + 9) % 12);
-    var l = Math.floor((year - 2000 - 1) / 4);
-    var n = 14 - m - l;
-    var tithi = (day + n + d + k) % 15;
-
-    return tithis[tithi];
-}
-
-// display Telugu tithi on the webpage
-document.getElementById("tithi").innerHTML = getTithi();
-
-
-function updateDateTime() {
-    const now = new Date();
-    const date = now.toLocaleDateString();
-    const time = now.toLocaleTimeString();
-    const datetimeString = `${date} \n ${time}`;
-    document.getElementById("datetime").textContent = datetimeString;
-}
-
-setInterval(updateDateTime, 1000);
-
-
-// Define Telugu week days
-const teluguWeekDays = [
-    "ఆదివారం",
-    "సోమవారం",
-    "మంగళవారం",
-    "బుధవారం",
-    "గురువారం",
-    "శుక్రవారం",
-    "శనివారం",
-];
-
-// Get the current Telugu week day
-const teluguWeekDay = teluguWeekDays[new Date().getDay()];
-
-// Display the Telugu week day in the HTML element
-const teluguWeekElement = document.getElementById("telugu-week");
-teluguWeekElement.textContent = `${teluguWeekDay}`;
-
-// GOOGLE
-
-// sTAR 
-
-function displayStar() {
-    var today = new Date();
-    var year = today.getFullYear();
-    var month = today.getMonth() + 1;
-    var day = today.getDate();
-    var totalDays = (year) * 365 + Math.floor((year - 1) / 4) + 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + day + 2;
-    if (month > 2 && year % 4 === 0) {
-        totalDays++;
-    }
-    var nakshatras = ['అశ్విని', 'భరణి', 'కృత్తిక', 'రోహిణి', 'మృగశీర్ష', 'ఆర్ద్ర', 'పునర్వసు', 'పుష్య', 'ఆశ్లేష', 'మాఘ', 'పూర్వ ఫాల్గుణి', 'ఉత్తర ఫాల్గుణి', 'హస్త', 'చిత్ర', 'స్వాతి', 'విశాఖ', 'అనురాధ', 'జ్యేష్ఠ', 'మూల', 'పూర్వ ఆషాఢ', 'ఉత్తర ఆషాఢ', 'శ్రవణం', 'ధనిష్ట', 'శతభిష', 'పూర్వ భాద్రపద', 'ఉత్తర భాద్రపద', 'రేవతి'];
-    var nakshatra = nakshatras[(totalDays - 1) % 27];
-    document.getElementById('star').innerHTML = nakshatra;
-}
-
-
-displayStar();
-  </script>
+  
+  
+  
+  
+  
+  
     <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
-    <div class="d-flex flex-row justify-content-center bg-black">
-        <nav class="navbar fixed-top-center ">
-            <div class="container">
+
+    <div id="rashi">
+
+        <div class="">
+            <div class='at-container'>
+                <div class='at-item'>
+                    <h1 class="heading text-center text-shadow-drop-center">రాశి ఫలాలు</h1>
+                </div>
+            </div>
+            <h3 class="text-center"></h3>
+            <script src="https://apis.google.com/js/platform.js"></script>
+            <div class="d-flex flex-row justify-content-center ">
+                <div class="g-ytsubscribe" data-channelid="UCGuG9Du8IfRGzhd-_nEOS6Q" data-layout="full" data-count="default"></div>
+            </div>
+            <h3 class="text-center side-heding  text-shadow-drop-center">vSa Group's వారి ఉగాది శుభాకాంక్షలు</h3>
+        </div>
+        <div id="sectionHome">
+            <div class="container col-12">
                 <div class="row">
-                    <div class="d-flex flex-row justify-content-center">
-                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button class="btn btn-outline-info" onclick="display('sectionRashi')">
-                                <h3>Home</h3>
-                            </button>
-                            <button class="btn btn-outline-light " onclick="display('sectionHome')">
-                                <h3>రాశి ఫలాలు</h3>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div id="rashi" class="bg-black">
-
-        <div id="sectionRashi">
-            <div class="container">
-                <div class="d-flex flex-column justify-content-center">
-
-                    <div class="col-12 d-flex flex-row">
-                        <div class='at-item col-12 col-md-6'>
-                            <h1 class=" heading text-center text-shadow-drop-center">శోభకృతు <span class="fs-2">నామసంవత్సరం</span></h1>
-                        </div>
-                        <div class="at-item col-12">
-                            <h1 class="heading text-center text-shadow-drop-center">రాశి ఫలాలు</h1>
-                        </div>
-                    </div>
-
-                    <script src="https://apis.google.com/js/platform.js"></script>
-                    <div class="d-flex flex-row justify-content-center ">
-                        <div class="g-ytsubscribe" data-channelid="UCGuG9Du8IfRGzhd-_nEOS6Q" data-layout="full" data-count="default"></div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <h3 class="d-sm-block d-md-none text-center side-heding  text-shadow-drop-center">vSa Group's <br>వారి ఉగాది శుభాకాంక్షలు</h3>
-                    <h3 class="d-none d-md-block text-center side-heding  text-shadow-drop-center">vSa Group's వారి ఉగాది శుభాకాంక్షలు</h3>
-                </div>
-                <div class="col-12">
-                    <div id="tithi-container">
-                        <div class="text-center text-white">
-                            <h3>నక్షత్రం :: <span id="star"></span></h3>
-                            <H3 class="text-white">తిథి : :<span id="tithi"></span> </h3>
-                        </div>
-                    </div>
-                    <script src="script.js"></script>
-                </div>
-                <div id="telugu-week" class="col-12"></div>
-                <div id="datetime" class="col-12"></div>
-                <div id="countdown" class="col-12">
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="days"></span>
-                        <span class="countdown-label">Days</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="hours"></span>
-                        <span class="countdown-label">Hours</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="minutes"></span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="seconds"></span>
-                        <span class="countdown-label">Seconds</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    </div>
-
-    <div id="sectionHome" class="bg-black">
-
-        <div class="container col-12">
-            <div class="row">
-
-
-                <div id="aries" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6 d-flex flex-column justify-content-center">
-                            <img src="https://pngimg.com/d/aries_PNG52.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">మేష రాశి (Aries)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">14</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">14</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div id="aries" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6 d-flex flex-column justify-content-center">
+                                <img src="https://pngimg.com/d/aries_PNG52.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">మేష రాశి (Aries)</h1>
                             </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">14</h3>
+                                            </div>
                                         </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">03</h3>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">14</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">06</h3>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">03</h3>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">06</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionMesha')">View More</button>
                                 </div>
-                                <button class="btn btn-primary" onclick="display('sectionMesha')">View More</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="Taurus" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6">
-                            <img src="https://vedictime.com/_/images/lagna%20images/vrushabha.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">వృషభ రాశి (Taurus)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">14</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">11</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div id="Taurus" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6">
+                                <img src="https://vedictime.com/_/images/lagna%20images/vrushabha.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">వృషభ రాశి (Taurus)</h1>
                             </div>
-                            <div class="">
-                                <div class="d-flex flex-row">
-                                    <div class="m-2 col-6">
-                                        <h3 class="">రాజ్య పూజ్యం</h3>
-                                    </div>
-                                    <div class="m-2 col-4">
-                                        <h3 class="">06</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="d-flex flex-row">
-                                    <div class="m-2 col-6">
-                                        <h3 class="">అవమానం</h3>
-                                    </div>
-                                    <div class="m-2 col-4">
-                                        <h3 class="">01</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary " onclick="display('sectionVurashaba')">View More </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Gemini" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6">
-                            <img src="https://vedictime.com/_/images/lagna%20images/mithun.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">మిధునం (Gemini) </h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">14</h3>
+                                            </div>
                                         </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">11</h3>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">11</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" onclick="display('sectionMidhunam')">View More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="cancer" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6">
-                            <img src="https://vedictime.com/_/images/lagna%20images/karka.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">కర్కాటకం (cancer)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" onclick="display('sectionKarakam')">View More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Leo" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6">
-                            <img src="https://vedictime.com/_/images/lagna%20images/singh.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">సింహం (Leo) </h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">08</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">14</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">01</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" onclick="display('sectionShimam')">View More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Virgo" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6">
-                            <img src="https://vedictime.com/_/images/lagna%20images/kanya.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">కన్య (Virgo)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">11</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">04</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" onclick="display('sectionKanya')">View More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="ibra" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6">
-                            <img src="https://vedictime.com/_/images/lagna%20images/tula.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">తుల (Libra)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">08</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">08</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">07</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" onclick="display('sectionThula')">View More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Scorpio" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6 d-flex flex-column justify-content-center">
-                            <img src="https://vedictime.com/_/images/lagna%20images/vrishchik.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">వృశ్చికం (Scorpio)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">14</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">14</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">03</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">01</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary" onclick="display('sectionVurshikam')">View More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Sagittarius" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6 d-flex flex-column justify-content-center">
-                            <img src="https://vedictime.com/_/images/lagna%20images/dhanu.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">ధనస్సు (Sagittarius)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">08</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column">
                                 <div class="">
                                     <div class="d-flex flex-row">
                                         <div class="m-2 col-6">
@@ -864,186 +243,575 @@ displayStar();
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" onclick="display('sectionDhanu')">View More</button>
+                                <button class="btn btn-primary " onclick="display('sectionVurashaba')">View More </button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="Capricorn" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6 d-flex flex-column justify-content-center">
-                            <img src="https://vedictime.com/_/images/lagna%20images/makara.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">మకరం (Capricorn) </h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div id="Gemini" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6">
+                                <img src="https://vedictime.com/_/images/lagna%20images/mithun.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">మిధునం (Gemini) </h1>
                             </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">11</h3>
+                                            </div>
                                         </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">04</h3>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionMidhunam')">View More</button>
                                 </div>
-                                <button class="btn btn-primary" onclick="display('sectionMakaram')">View More</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="Aquarius" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6 d-flex flex-column justify-content-center">
-                            <img src="https://vedictime.com/_/images/lagna%20images/kumbh.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">కుంభం (Aquarius)</h1>
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div id="cancer" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6">
+                                <img src="https://vedictime.com/_/images/lagna%20images/karka.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">కర్కాటకం (cancer)</h1>
                             </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
                                         </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">05</h3>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">04</h3>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionKarakam')">View More</button>
                                 </div>
-                                <button class="btn btn-primary" onclick="display('sectionKunabm')">View More</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="Pisces" class="col-md-6">
-                    <div class="card m-2 shadow d-flex flex-row">
-                        <div class="col-6 d-flex flex-column justify-content-center">
-                            <img src="https://vedictime.com/_/images/lagna%20images/meen.png" class="rasi m-2 p-3">
-                            <h1 class="text-center">మీనం (Pisces) </h1>
-
-                        </div>
-                        <div class="d-flex flex-column col-6">
-                            <div class="d-flex flex-column">
-                                <div class="ఆదాయం">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">ఆదాయం</h3>
+                    <div id="Leo" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6">
+                                <img src="https://vedictime.com/_/images/lagna%20images/singh.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">సింహం (Leo) </h1>
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">08</h3>
+                                            </div>
                                         </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">02</h3>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">14</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="వయ్యం ">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">వయ్యం </h3>
-                                        </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">08</h3>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">01</h3>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionShimam')">View More</button>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column">
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">రాజ్య పూజ్యం</h3>
+                        </div>
+                    </div>
+
+                    <div id="Virgo" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6">
+                                <img src="https://vedictime.com/_/images/lagna%20images/kanya.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">కన్య (Virgo)</h1>
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">11</h3>
+                                            </div>
                                         </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">01</h3>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="d-flex flex-row">
-                                        <div class="m-2 col-6">
-                                            <h3 class="">అవమానం</h3>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">04</h3>
+                                            </div>
                                         </div>
-                                        <div class="m-2 col-4">
-                                            <h3 class="">07</h3>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionKanya')">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="ibra" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6">
+                                <img src="https://vedictime.com/_/images/lagna%20images/tula.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">తుల (Libra)</h1>
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">08</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">08</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" onclick="display('sectionMenam')">View More</button>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">07</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionThula')">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Scorpio" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6 d-flex flex-column justify-content-center">
+                                <img src="https://vedictime.com/_/images/lagna%20images/vrishchik.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">వృశ్చికం (Scorpio)</h1>
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">14</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">14</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">03</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">01</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionVurshikam')">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Sagittarius" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6 d-flex flex-column justify-content-center">
+                                <img src="https://vedictime.com/_/images/lagna%20images/dhanu.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">ధనస్సు (Sagittarius)</h1>
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">08</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">06</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">01</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionDhanu')">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Capricorn" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6 d-flex flex-column justify-content-center">
+                                <img src="https://vedictime.com/_/images/lagna%20images/makara.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">మకరం (Capricorn) </h1>
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">04</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionMakaram')">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Aquarius" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6 d-flex flex-column justify-content-center">
+                                <img src="https://vedictime.com/_/images/lagna%20images/kumbh.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">కుంభం (Aquarius)</h1>
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">05</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">04</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionKunabm')">View More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Pisces" class="col-md-6">
+                        <div class="card m-2 shadow d-flex flex-row">
+                            <div class="col-6 d-flex flex-column justify-content-center">
+                                <img src="https://vedictime.com/_/images/lagna%20images/meen.png" class="rasi m-2 p-3">
+                                <h1 class="text-center">మీనం (Pisces) </h1>
+
+                            </div>
+                            <div class="d-flex flex-column col-6">
+                                <div class="d-flex flex-column">
+                                    <div class="ఆదాయం">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">ఆదాయం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">02</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="వయ్యం ">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">వయ్యం </h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">08</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">రాజ్య పూజ్యం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">01</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex flex-row">
+                                            <div class="m-2 col-6">
+                                                <h3 class="">అవమానం</h3>
+                                            </div>
+                                            <div class="m-2 col-4">
+                                                <h3 class="">07</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="display('sectionMenam')">View More</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-outline-primar" onclick="display('sectionRashi')"> Back</button>
-    </div>
-    <div class="bg-black">
-        <div id="sectionMesha" class="m-2">
+        <div id="sectionMesha" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class="">మేషం (Aries) </h1>
                 <br>
@@ -1059,7 +827,7 @@ displayStar();
                 <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
             </div>
         </div>
-        <div id="sectionVurashaba" class="m-2">
+        <div id="sectionVurashaba" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class="">వృషభం (Taurus)</h1>
                 <br>
@@ -1076,7 +844,7 @@ displayStar();
                 <button class="btn btn-primary" onclick="display('sectionHome')">back to home </button>
             </div>
         </div>
-        <div id="sectionMidhunam" class="m-2">
+        <div id="sectionMidhunam" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class="">మిధునం (Gemini)</h1>
                 <br>
@@ -1093,7 +861,7 @@ displayStar();
 
             </div>
         </div>
-        <div id="sectionKarakam" class="m-2">
+        <div id="sectionKarakam" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class="">కర్కాటకం (cancer)</h1>
                 <br>
@@ -1112,7 +880,7 @@ displayStar();
             </div>
         </div>
 
-        <div id="sectionShimam" class="m-2">
+        <div id="sectionShimam" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class="">సింహం (Leo)</h1>
                 <br>
@@ -1147,7 +915,7 @@ displayStar();
             </div>
         </div>
 
-        <div id="sectionKanya" class="m-2">
+        <div id="sectionKanya" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class="">కన్య (Virgo)</h1>
                 <br>
@@ -1184,7 +952,7 @@ displayStar();
 
             </div>
         </div>
-        <div id="sectionMakaram" class="m-2">
+        <div id="sectionMakaram" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class="">మకరం (Capricorn) </h1>
                 <br>
@@ -1205,7 +973,7 @@ displayStar();
                 </article>
             </div>
         </div>
-        <div id="sectionThula" class="m-2">
+        <div id="sectionThula" class="m-5">
             <div class="card m-2 p-3">
                 <h1 class="text-center ">తుల (Libra)</h1><br>
                 <h3 class="text-center "> చిత్త 3,4, స్వాతి, విశాఖ 1,2,3 </h3>
@@ -1245,7 +1013,7 @@ displayStar();
                 </article>
             </div>
         </div>
-        <div id="sectionVurshikam" class="m-2">
+        <div id="sectionVurshikam" class="m-5">
             <div class="card m-2 p-3">
                 <h1 class="text-center ">వృశ్చికం (Scorpio)</h1><br>
                 <h3 class="text-center "> విశాఖ 4, అనురాధ, జ్యేష్ఠ </h3>
@@ -1279,12 +1047,12 @@ displayStar();
                 </article>
             </div>
         </div>
-        <div id="sectionKunabm" class="m-2">
-            <div class="card m-2">
+        <div id="sectionKunabm" class="m-5">
+            <div class="card m-2 p-3">
                 <h1 class="text-center "> కుంభం (Aquarius) </h1><br>
                 <h3 class="text-center "> ధనిష్ట 3,4, శతభిషం, పూర్వాభాద్ర 1,2,3్ఠ </h3>
             </div>
-            <div class="card-detiles m-2">
+            <div class="card-detiles m-2 p-3">
                 <article>
                     <ul>
                         <li>ఏప్రిల్ తర్వాత శని ఒకటవ రాశిలోనూ, గురువు రెండవ రాశిలోనూ, రాహువు 3లోనూ, కేతువు 9లోనూ సంచరించడం వల్ల ఎక్కువగా సానుకూల ఫలితాలు మీ ముందుకు వస్తాయి</li>
@@ -1304,12 +1072,12 @@ displayStar();
 
             </div>
         </div>
-        <div id="sectionDhanu" class="m-2">
-            <div class="card-detiles m-2">
+        <div id="sectionDhanu" class="m-5">
+            <div class="card m-2 p-3">
                 <h1 class="text-center "> ధనస్సు (Sagittarius)</h1><br>
                 <h3 class="text-center "> మూల, పూర్వామాఢ, ఉత్తరాషాఢ </h3>
             </div>
-            <div class="card-detiles m-2">
+            <div class="card-detiles m-2 p-3">
                 <article>
                     <ul>
                         <li> ఏప్రిల్ తర్వాత నుంచి ఏలిన్నాటి శని తొలగుతుంది. </li>
@@ -1328,7 +1096,7 @@ displayStar();
                 </article>
             </div>
         </div>
-        <div id="sectionMenam" class="m-2">
+        <div id="sectionMenam" class="m-5">
             <div class="text-center card m-2 p-3">
                 <h1 class=""> మీనం (Pisces) </h1>
                 <br>
@@ -1351,7 +1119,6 @@ displayStar();
                 </article>
             </div>
         </div>
-    </div>
     </div>
 </body>
 
